@@ -98,64 +98,26 @@ El **TPO-Ecommerce** es un proyecto para Aplicaciones Interactivas que demuestra
 - Java 17 o superior
 - MySQL 8.0 o superior
 - Maven 3.6 o superior
-- **Docker Desktop** (opcional, pero recomendado para desarrollo fácil)
 
-### 🐳 Método 1: Docker (Recomendado - Más Fácil)
-
-#### Desarrollo Local
-```bash
-# Construir e iniciar desde código local
-cd TPO-Ecommerce
-docker-compose up -d --build
-
-# Ver logs en tiempo real
-docker-compose logs -f
-
-# Detener servicios
-docker-compose down
-```
-
-#### URLs de Acceso (Docker)
-- **Frontend**: http://localhost
-- **Backend API**: http://localhost:8081/api
-- **MySQL**: localhost:3306
-
-#### Credenciales de Prueba
-- **Admin**: `admin@test.com` / `admin123`
-- **Usuario**: `user1@test.com` / `user123`
-- **Usuario**: `test@test.com` / `test123`
-
-> 📖 Para más detalles sobre Docker, consulta [DOCKER.md](./TPO-Ecommerce/docs/DOCKER.md)
-
-### 💻 Método 2: Desarrollo Local (Manual)
-
-#### Backend (Spring Boot)
+### Backend (Spring Boot)
 ```bash
 cd TPO-Ecommerce/backend
 mvn clean install
 mvn spring-boot:run
 ```
 
-#### Frontend (React)
+### Frontend (React)
 ```bash
 cd TPO-Ecommerce/frontend
 npm install
 npm run dev
 ```
 
-#### Base de Datos
+### Base de Datos
 ```bash
-# Opción A: MySQL con Docker
-docker run --name mysql-ecommerce -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=ecommerce_db -p 3308:3306 -d mysql:8.0
-
-# Opción B: Importar el esquema manualmente
+# Importar el esquema de la base de datos
 mysql -u root -p < TPO-Ecommerce/backend/db-seed-completo.sql
 ```
-
-#### URLs de Acceso (Local)
-- **Frontend**: http://localhost:5173
-- **Backend API**: http://localhost:8081/api
-- **MySQL**: localhost:3308
 
 ## 📖 Documentación
 
